@@ -29,6 +29,7 @@
 		98A0151C2C74650900B484D7 /* EssentialFeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedTests.swift; sourceTree = "<group>"; };
 		98A015272C7465C700B484D7 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		98A015292C74675600B484D7 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
+		98CA2C5E2C74738C00E44307 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +54,7 @@
 		98A015052C74650800B484D7 = {
 			isa = PBXGroup;
 			children = (
+				98CA2C5E2C74738C00E44307 /* CI.xctestplan */,
 				98A015112C74650800B484D7 /* EssentialFeed */,
 				98A0151B2C74650900B484D7 /* EssentialFeedTests */,
 				98A015102C74650800B484D7 /* Products */,
