@@ -15,6 +15,8 @@
 		981AE4B22C7C7A39009DB408 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AE4B12C7C7A39009DB408 /* URLSessionHTTPClient.swift */; };
 		981AE4BD2C7D7548009DB408 /* EssentialFeedAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AE4BC2C7D7548009DB408 /* EssentialFeedAPIEndToEndTests.swift */; };
 		981AE4BE2C7D7548009DB408 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A0150F2C74650800B484D7 /* EssentialFeed.framework */; };
+		981AE4C42C7D91DB009DB408 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AE4A42C78635C009DB408 /* XCTestCase+MemoryLeakTracking.swift */; };
+		981AE4C52C7D91EA009DB408 /* EssentialFeedAPIEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AE4BC2C7D7548009DB408 /* EssentialFeedAPIEndToEndTests.swift */; };
 		98A015182C74650900B484D7 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A0150F2C74650800B484D7 /* EssentialFeed.framework */; };
 		98A0151D2C74650900B484D7 /* RemoteFeedLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A0151C2C74650900B484D7 /* RemoteFeedLoaderTests.swift */; };
 		98A015282C7465C700B484D7 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A015272C7465C700B484D7 /* FeedItem.swift */; };
@@ -307,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				981AE4BD2C7D7548009DB408 /* EssentialFeedAPIEndToEndTests.swift in Sources */,
+				981AE4C42C7D91DB009DB408 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				981AE4C52C7D91EA009DB408 /* EssentialFeedAPIEndToEndTests.swift in Sources */,
 				98A0151D2C74650900B484D7 /* RemoteFeedLoaderTests.swift in Sources */,
 				981AE4A22C7716B5009DB408 /* URLSessionHTTPClientTests.swift in Sources */,
 				981AE4A52C78635C009DB408 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
