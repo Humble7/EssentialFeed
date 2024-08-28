@@ -63,7 +63,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
     
     func test_save_requestCacheDeletion() {
         let (sut, store) = makeSUT()
-        sut.save([uniqueFeed(), uniqueFeed()])
+        sut.save([uniqueItem(), uniqueItem()])
         XCTAssertEqual(store.deleteCachedFeedCallCount, 1)
     }
     
@@ -71,7 +71,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         let (sut, store) = makeSUT()
         let deletionError = anyNSError()
         
-        sut.save([uniqueFeed(), uniqueFeed()])
+        sut.save([uniqueItem(), uniqueItem()])
         store.completeDeletion(with: deletionError)
         
         XCTAssertEqual(store.insertCallCount, 0)
@@ -80,7 +80,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
     func test_save_requestNewCacheInsertionOnSuccessfulDeletion() {
         let (sut, store) = makeSUT()
         
-        sut.save([uniqueFeed(), uniqueFeed()])
+        sut.save([uniqueItem(), uniqueItem()])
         store.completeDeletionSuccessfully()
         
         XCTAssertEqual(store.insertCallCount, 1)
@@ -88,7 +88,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
     
     func test_save_requestNewCacheInsertionWithTimestampOnSuccessfulDeletion() {
         let timestamp = Date()
-        let items = [uniqueFeed(), uniqueFeed()]
+        let items = [uniqueItem(), uniqueItem()]
 
         let (sut, store) = makeSUT(currentDate: { timestamp })
         
@@ -110,7 +110,7 @@ final class CacheFeedUseCaseTests: XCTestCase {
         return (sut, store)
     }
     
-    private func uniqueFeed() -> FeedItem {
+    private func uniqueItem() -> FeedItem {
         return FeedItem(id: UUID(), description: "any", location: "any", imageURL: anyURL())
     }
     
