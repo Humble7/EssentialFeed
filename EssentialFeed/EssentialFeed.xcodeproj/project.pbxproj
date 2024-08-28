@@ -96,14 +96,14 @@
 			path = "Feed API";
 			sourceTree = "<group>";
 		};
-		981AE4A02C75C9F3009DB408 /* FeedAPI */ = {
+		981AE4A02C75C9F3009DB408 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
 				981AE4A32C78633F009DB408 /* Helpers */,
 				98A0151C2C74650900B484D7 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				981AE4A12C7716B5009DB408 /* URLSessionHTTPClientTests.swift */,
 			);
-			path = FeedAPI;
+			path = "Feed API";
 			sourceTree = "<group>";
 		};
 		981AE4A32C78633F009DB408 /* Helpers */ = {
@@ -120,6 +120,13 @@
 				981AE4BC2C7D7548009DB408 /* EssentialFeedAPIEndToEndTests.swift */,
 			);
 			path = EssentialFeedAPIEndToEndTests;
+			sourceTree = "<group>";
+		};
+		981AE4CF2C7ED8EF009DB408 /* Feed Cache */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Feed Cache";
 			sourceTree = "<group>";
 		};
 		98A015052C74650800B484D7 = {
@@ -156,7 +163,8 @@
 		98A0151B2C74650900B484D7 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				981AE4A02C75C9F3009DB408 /* FeedAPI */,
+				981AE4CF2C7ED8EF009DB408 /* Feed Cache */,
+				981AE4A02C75C9F3009DB408 /* Feed API */,
 			);
 			path = EssentialFeedTests;
 			sourceTree = "<group>";
