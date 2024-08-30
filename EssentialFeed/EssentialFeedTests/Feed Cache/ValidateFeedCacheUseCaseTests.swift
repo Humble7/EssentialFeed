@@ -38,7 +38,7 @@ final class ValidateFeedCacheUseCaseTests: XCTestCase {
         let lessThanSevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7).adding(seconds: 1)
         
         sut.validateCache()
-        store.completeRetrival(with: feed.local, timestamp: lessThanSevenDaysOldTimestamp)
+        store.completeRetrieval(with: feed.local, timestamp: lessThanSevenDaysOldTimestamp)
         
         XCTAssertEqual(store.receivedMessages, [.retrieve])
     }
@@ -50,7 +50,7 @@ final class ValidateFeedCacheUseCaseTests: XCTestCase {
         let sevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7)
         
         sut.validateCache()
-        store.completeRetrival(with: feed.local, timestamp: sevenDaysOldTimestamp)
+        store.completeRetrieval(with: feed.local, timestamp: sevenDaysOldTimestamp)
         
         XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCachedFeed])
     }
@@ -62,7 +62,7 @@ final class ValidateFeedCacheUseCaseTests: XCTestCase {
         let moreThanSevenDaysOldTimestamp = fixedCurrentDate.adding(days: -7).adding(seconds: -1)
         
         sut.validateCache()
-        store.completeRetrival(with: feed.local, timestamp: moreThanSevenDaysOldTimestamp)
+        store.completeRetrieval(with: feed.local, timestamp: moreThanSevenDaysOldTimestamp)
         
         XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCachedFeed])
     }
