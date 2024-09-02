@@ -23,7 +23,7 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     
     func test_retrieve_deliverEmptyOnEmptyCache() {
         let sut = makeSUT()
-        assertThatRetrieveDeliversEmptyOnEmptyCache(on: sut)
+        assertThatRetrieveDeliverEmptyOnEmptyCache(on: sut)
     }
     
     func test_retrieve_hasNoSideEffectsOnEmptyCache() {
@@ -31,7 +31,7 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
         assertThatRetrieveHasNoSideEffectsOnEmptyCache(on: sut)
     }
     
-    func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
+    func test_retrieve_deliverFoundValuesOnNonEmptyCache() {
         let sut = makeSUT()
         assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
     }
@@ -41,7 +41,7 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
         assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
     }
     
-    func test_retrieve_deliversFailureOnRetrievalError() {
+    func test_retrieve_deliverFailureOnRetrievalError() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
         
@@ -62,20 +62,20 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     func test_insert_deliverNoErrorOnEmptyCache() {
         let sut = makeSUT()
         
-        assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
+        assertThatInsertDeliverNoErrorOnEmptyCache(on: sut)
     }
     
-    func test_insert_deliversNoErrorOnNonEmptyCache() {
+    func test_insert_deliverNoErrorOnNonEmptyCache() {
         let sut = makeSUT()
         assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
     }
     
-    func test_insert_overridesPreviouslyInsertedCacheValues() {
+    func test_insert_overridePreviouslyInsertedCacheValues() {
         let sut = makeSUT()
         assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
     }
     
-    func test_insert_deliversErrorOnInsertionError() {
+    func test_insert_deliverErrorOnInsertionError() {
         let invalidStoreURL = URL(string: "invalid://store-url")!
         let sut = makeSUT(storeURL: invalidStoreURL)
         let feed = uniqueImageFeed().local
@@ -97,17 +97,17 @@ final class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
         expect(sut, toRetrieve: .empty)
     }
     
-    func test_delete_deliversNoErrorOnEmptyCache() {
+    func test_delete_deliverNoErrorOnEmptyCache() {
         let sut = makeSUT()
         assertThatDeleteDeliversNoErrorOnEmptyCache(on: sut)
     }
     
-    func test_delete_deliversNoErrorOnNonEmptyCache() {
+    func test_delete_deliverNoErrorOnNonEmptyCache() {
         let sut = makeSUT()
         assertThatDeleteDeliversNoErrorOnNonEmptyCache(on: sut)
     }
     
-    func test_delete_emptiesPreviouslyInsertedCache() {
+    func test_delete_emptyPreviouslyInsertedCache() {
         let sut = makeSUT()
         assertThatDeleteEmptiesPreviouslyInsertedCache(on: sut)
     }
