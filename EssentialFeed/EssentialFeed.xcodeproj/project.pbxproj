@@ -41,6 +41,7 @@
 		98A0152A2C74675600B484D7 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A015292C74675600B484D7 /* FeedLoader.swift */; };
 		98DB73342C86B98E0081D366 /* CoreDataFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DB73332C86B98E0081D366 /* CoreDataFeedStoreTests.swift */; };
 		98DB73362C86BA8F0081D366 /* CoreDataFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DB73352C86BA8F0081D366 /* CoreDataFeedStore.swift */; };
+		98DB73392C86EBF50081D366 /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98DB73372C86EBF40081D366 /* FeedStore.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		98CA2C5E2C74738C00E44307 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		98DB73332C86B98E0081D366 /* CoreDataFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStoreTests.swift; sourceTree = "<group>"; };
 		98DB73352C86BA8F0081D366 /* CoreDataFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStore.swift; sourceTree = "<group>"; };
+		98DB73382C86EBF50081D366 /* FeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 				9855795C2C81A63B00B3B46B /* FeedCachePolicy.swift */,
 				981AE4D52C7F0C68009DB408 /* FeedStore.swift */,
 				9855794F2C80526F00B3B46B /* LocalFeedImage.swift */,
+				98DB73372C86EBF40081D366 /* FeedStore.xcdatamodeld */,
 				985579622C841AEB00B3B46B /* CodableFeedStore.swift */,
 				98DB73352C86BA8F0081D366 /* CoreDataFeedStore.swift */,
 			);
@@ -414,6 +417,7 @@
 				9855794E2C80521100B3B46B /* RemoteFeedItem.swift in Sources */,
 				9855795D2C81A63B00B3B46B /* FeedCachePolicy.swift in Sources */,
 				981AE4652C749F87009DB408 /* RemoteFeedLoader.swift in Sources */,
+				98DB73392C86EBF50081D366 /* FeedStore.xcdatamodeld in Sources */,
 				985579502C80526F00B3B46B /* LocalFeedImage.swift in Sources */,
 				981AE4D62C7F0C68009DB408 /* FeedStore.swift in Sources */,
 				981AE4D42C7F0BBD009DB408 /* LocalFeedLoader.swift in Sources */,
@@ -760,6 +764,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		98DB73372C86EBF40081D366 /* FeedStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				98DB73382C86EBF50081D366 /* FeedStore.xcdatamodel */,
+			);
+			currentVersion = 98DB73382C86EBF50081D366 /* FeedStore.xcdatamodel */;
+			name = FeedStore.xcdatamodeld;
+			path = "/Users/mozat/Documents/learn/TDD/practice2/EssentialFeed/EssentialFeed/EssentialFeed/Feed Cache/FeedStore.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 98A015062C74650800B484D7 /* Project object */;
 }
