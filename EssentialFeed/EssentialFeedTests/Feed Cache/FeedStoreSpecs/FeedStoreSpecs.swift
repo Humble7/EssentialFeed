@@ -23,6 +23,8 @@ protocol FeedStoreSpecs {
     func test_insert_overridePreviouslyInsertedCacheValues()
 
     func test_delete_deliverNoErrorOnEmptyCache()
+    
+    func test_delete_hasNoSideEffectsOnEmptyCache()
 
     func test_delete_emptyPreviouslyInsertedCache()
 
