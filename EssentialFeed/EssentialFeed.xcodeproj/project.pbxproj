@@ -42,6 +42,7 @@
 		98C67A752D04231800B88C20 /* CI_iOS.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 98C67A742D04231800B88C20 /* CI_iOS.xctestplan */; };
 		98C67A762D04231800B88C20 /* CI_iOS.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 98C67A742D04231800B88C20 /* CI_iOS.xctestplan */; };
 		98C67A772D04231800B88C20 /* CI_iOS.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 98C67A742D04231800B88C20 /* CI_iOS.xctestplan */; };
+		98C67A982D044AE000B88C20 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AE4A42C78635C009DB408 /* XCTestCase+MemoryLeakTracking.swift */; };
 		98DB73342C86B98E0081D366 /* CoreDataFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DB73332C86B98E0081D366 /* CoreDataFeedStoreTests.swift */; };
 		98DB73362C86BA8F0081D366 /* CoreDataFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DB73352C86BA8F0081D366 /* CoreDataFeedStore.swift */; };
 		98DB73392C86EBF50081D366 /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98DB73372C86EBF40081D366 /* FeedStore.xcdatamodeld */; };
@@ -679,6 +680,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C67A982D044AE000B88C20 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
