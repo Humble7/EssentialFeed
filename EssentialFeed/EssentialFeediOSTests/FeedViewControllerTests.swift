@@ -372,16 +372,6 @@ private extension UIButton {
     }
 }
 
-private extension UIRefreshControl {
-    func simulatePullToRefresh() {
-        allTargets.forEach { target in
-            actions(forTarget: target, forControlEvent: .valueChanged)?.forEach {
-                (target as NSObject).perform(Selector($0))
-            }
-        }
-    }
-}
-
 private extension FeedViewController {
     func simulateAppearance() {
         if !isViewLoaded {
@@ -452,21 +442,5 @@ private extension FeedViewController {
 
     private var feedImagesSection: Int {
         return 0
-    }
-}
-
-// reference: https://www.youtube.com/watch?v=n9ObNkPP5GY&t=905s
-private class FakeRefreshControl: UIRefreshControl {
-    
-    private var _isRefreshing: Bool = false
-    
-    override var isRefreshing: Bool { _isRefreshing }
-    
-    override func beginRefreshing() {
-        _isRefreshing = true
-    }
-    
-    override func endRefreshing() {
-        _isRefreshing = false
     }
 }
