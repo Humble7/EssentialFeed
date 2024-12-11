@@ -16,7 +16,7 @@ extension FeedViewController {
         }
         
         beginAppearanceTransition(true, animated: false) //viewWillAppear
-         endAppearanceTransition() //viewIsAppearing+viewDidAppear
+        endAppearanceTransition() //viewIsAppearing+viewDidAppear
     }
     
     func simulateUserInitiatedFeedReload() {
