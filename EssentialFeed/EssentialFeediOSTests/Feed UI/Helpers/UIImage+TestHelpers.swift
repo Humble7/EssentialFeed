@@ -9,6 +9,14 @@ import UIKit
 
 extension UIImage {
     static func make(withColor color: UIColor) -> UIImage {
+        guard Thread.isMainThread else {
+            var res: UIImage?
+            DispatchQueue.main.sync {
+                res = self.make(withColor: color)
+            }
+            return res!
+        }
+        
         let rect = CGRect(x: 0, y: 0, width: 1, height: 1)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()!
