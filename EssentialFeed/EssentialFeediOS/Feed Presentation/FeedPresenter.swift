@@ -5,6 +5,7 @@
 //  Created by ChenZhen on 11/12/24.
 //
 
+import Foundation
 import EssentialFeed
 
 struct FeedLoadingViewModel {
@@ -34,7 +35,10 @@ final class FeedPresenter {
     }
     
     static var title: String {
-        return "My Feed"
+        return NSLocalizedString("FEED_VIEW_TITLE",
+                    tableName: "Feed",
+                    bundle: Bundle(for: FeedPresenter.self),
+                    comment: "Title for the feed view")
     }
 
     func didStartLoadingFeed() {
