@@ -136,6 +136,7 @@ Description Description</string>
                         <connections>
                             <outlet property="dataSource" destination="kt8-kI-aUt" id="FY7-Le-Qup"/>
                             <outlet property="delegate" destination="kt8-kI-aUt" id="G0x-yd-455"/>
+                            <outlet property="prefetchDataSource" destination="kt8-kI-aUt" id="34h-oV-enz"/>
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="V5c-2G-YYm">
