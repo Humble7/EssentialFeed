@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 74;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -158,8 +158,30 @@
 		98DB73492C89DB590081D366 /* EssentialFeedCacheIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedCacheIntegrationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		985226002D0B0CE800A59798 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/Feed.strings,
+				FeedImageViewModel.swift,
+				FeedPresenter.swift,
+			);
+			target = 98A0150E2C74650800B484D7 /* EssentialFeed */;
+		};
+		985226012D0B0CE800A59798 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				/Localized/Feed.strings,
+				FeedImageViewModel.swift,
+				FeedPresenter.swift,
+			);
+			target = 98C67A522D041EC600B88C20 /* EssentialFeediOS */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		985225FB2D0B050000A59798 /* Feed Presentation */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Feed Presentation"; sourceTree = "<group>"; };
+		985225FF2D0B0CCD00A59798 /* Feed Presentation */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (985226002D0B0CE800A59798 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 985226012D0B0CE800A59798 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "Feed Presentation"; sourceTree = "<group>"; };
 		98C67A542D041EC600B88C20 /* EssentialFeediOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOS; sourceTree = "<group>"; };
 		98C67A602D041EC700B88C20 /* EssentialFeediOSTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOSTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -335,6 +357,7 @@
 		98A015112C74650800B484D7 /* EssentialFeed */ = {
 			isa = PBXGroup;
 			children = (
+				985225FF2D0B0CCD00A59798 /* Feed Presentation */,
 				981AE4D22C7F0BAF009DB408 /* Feed Cache */,
 				98A0152B2C74681900B484D7 /* Feed Feature */,
 				981AE4632C749F5B009DB408 /* Feed API */,
@@ -455,6 +478,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				985225FF2D0B0CCD00A59798 /* Feed Presentation */,
 			);
 			name = EssentialFeed;
 			productName = EssentialFeed;
@@ -581,7 +607,6 @@
 				};
 			};
 			buildConfigurationList = 98A015092C74650800B484D7 /* Build configuration list for PBXProject "EssentialFeed" */;
-			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -591,6 +616,7 @@
 				el,
 			);
 			mainGroup = 98A015052C74650800B484D7;
+			preferredProjectObjectVersion = 56;
 			productRefGroup = 98A015102C74650800B484D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";

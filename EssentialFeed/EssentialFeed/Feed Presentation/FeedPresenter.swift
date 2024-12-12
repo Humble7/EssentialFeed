@@ -23,7 +23,7 @@ struct FeedViewModel {
 protocol FeedView {
     func display(_ viewModel: FeedViewModel)
 }
-
+ 
 final class FeedPresenter {
 
     private let feedView: FeedView
@@ -40,7 +40,7 @@ final class FeedPresenter {
                     bundle: Bundle(for: FeedPresenter.self),
                     comment: "Title for the feed view")
     }
-
+ 
     func didStartLoadingFeed() {
         loadingView.display(FeedLoadingViewModel(isLoading: true))
     }
