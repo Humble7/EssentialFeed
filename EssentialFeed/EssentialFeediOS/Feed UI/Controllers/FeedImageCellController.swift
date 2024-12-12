@@ -9,14 +9,17 @@ import UIKit
 
 final class FeedImageCellController {
     private let viewModel: FeedImageViewModel<UIImage>
+    private var cell: FeedImageCell?
 
     init(viewModel: FeedImageViewModel<UIImage>) {
         self.viewModel = viewModel
     }
 
-    func view() -> UITableViewCell {
-        let cell = binded(FeedImageCell())
+    func view(in tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedImageCell") as! FeedImageCell
+        self.cell = binded(cell)
         viewModel.loadImageData()
+
         return cell
     }
 
@@ -25,7 +28,12 @@ final class FeedImageCellController {
     }
 
     func cancelLoad() {
+        releaseCellForReuse()
         viewModel.cancelImageDataLoad()
+    }
+    
+    private func releaseCellForReuse() {
+        cell = nil
     }
     
     private func binded(_ cell: FeedImageCell) -> FeedImageCell {
