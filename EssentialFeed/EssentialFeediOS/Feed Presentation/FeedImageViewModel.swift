@@ -48,7 +48,7 @@ final class FeedImageViewModel<Image> {
 
     private func handle(_ result: FeedImageDataLoader.Result) {
         if let image = (try? result.get()).flatMap(imageTransformer) {
-            onImageLoad?(image)
+            onImageLoad? (image)
         } else {
             onShouldRetryImageLoadStateChange?(true)
         }
