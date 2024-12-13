@@ -170,6 +170,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		9804826D2D0BD7D800D7400D /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
 		985225FB2D0B050000A59798 /* Feed Presentation */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Feed Presentation"; sourceTree = "<group>"; };
 		985225FF2D0B0CCD00A59798 /* Feed Presentation */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Feed Presentation"; sourceTree = "<group>"; };
 		98C67A542D041EC600B88C20 /* EssentialFeediOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOS; sourceTree = "<group>"; };
@@ -230,6 +231,7 @@
 		981AE4632C749F5B009DB408 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
+				9804826D2D0BD7D800D7400D /* Helpers */,
 				981AE4642C749F87009DB408 /* RemoteFeedLoader.swift */,
 				981AE49C2C75BE71009DB408 /* HTTPClient.swift */,
 				981AE49E2C75BF21009DB408 /* FeedItemsMapper.swift */,
@@ -474,6 +476,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
+				9804826D2D0BD7D800D7400D /* Helpers */,
 				985225FF2D0B0CCD00A59798 /* Feed Presentation */,
 			);
 			name = EssentialFeed;
