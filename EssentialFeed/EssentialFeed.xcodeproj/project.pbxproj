@@ -171,6 +171,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		9804826D2D0BD7D800D7400D /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
+		980482722D0BD83100D7400D /* Helpers */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Helpers; sourceTree = "<group>"; };
 		985225FB2D0B050000A59798 /* Feed Presentation */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Feed Presentation"; sourceTree = "<group>"; };
 		985225FF2D0B0CCD00A59798 /* Feed Presentation */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Feed Presentation"; sourceTree = "<group>"; };
 		98C67A542D041EC600B88C20 /* EssentialFeediOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOS; sourceTree = "<group>"; };
@@ -245,6 +246,7 @@
 		981AE4A02C75C9F3009DB408 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
+				980482722D0BD83100D7400D /* Helpers */,
 				98A0151C2C74650900B484D7 /* LoadFeedFromRemoteUseCaseTests.swift */,
 				981AE4A12C7716B5009DB408 /* URLSessionHTTPClientTests.swift */,
 				980482642D0BA53100D7400D /* RemoteFeedImageDataLoaderTests.swift */,
@@ -498,6 +500,7 @@
 				98A0151A2C74650900B484D7 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
+				980482722D0BD83100D7400D /* Helpers */,
 				985225FB2D0B050000A59798 /* Feed Presentation */,
 			);
 			name = EssentialFeedTests;
