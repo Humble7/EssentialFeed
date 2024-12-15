@@ -80,11 +80,6 @@
 			path = EssentialAppTests;
 			sourceTree = "<group>";
 		};
-		980482B32D0EA9EA00D7400D /* EssentialAppUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EssentialAppUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +114,6 @@
 			children = (
 				980482922D0EA9E800D7400D /* EssentialApp */,
 				980482A92D0EA9EA00D7400D /* EssentialAppTests */,
-				980482B32D0EA9EA00D7400D /* EssentialAppUITests */,
 				980484422D0EEC6000D7400D /* Frameworks */,
 				980482912D0EA9E800D7400D /* Products */,
 			);
@@ -208,9 +202,6 @@
 			);
 			dependencies = (
 				980482B22D0EA9EA00D7400D /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				980482B32D0EA9EA00D7400D /* EssentialAppUITests */,
 			);
 			name = EssentialAppUITests;
 			packageProductDependencies = (
