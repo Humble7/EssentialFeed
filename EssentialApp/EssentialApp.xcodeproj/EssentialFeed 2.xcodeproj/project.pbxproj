@@ -54,6 +54,9 @@
 		98A015282C7465C700B484D7 /* FeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A015272C7465C700B484D7 /* FeedImage.swift */; };
 		98A0152A2C74675600B484D7 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A015292C74675600B484D7 /* FeedLoader.swift */; };
 		98C67A5D2D041EC700B88C20 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C67A532D041EC600B88C20 /* EssentialFeediOS.framework */; };
+		98C67A752D04231800B88C20 /* CI_iOS.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 98C67A742D04231800B88C20 /* CI_iOS.xctestplan */; };
+		98C67A762D04231800B88C20 /* CI_iOS.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 98C67A742D04231800B88C20 /* CI_iOS.xctestplan */; };
+		98C67A772D04231800B88C20 /* CI_iOS.xctestplan in Resources */ = {isa = PBXBuildFile; fileRef = 98C67A742D04231800B88C20 /* CI_iOS.xctestplan */; };
 		98C67A982D044AE000B88C20 /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981AE4A42C78635C009DB408 /* XCTestCase+MemoryLeakTracking.swift */; };
 		98C67A9E2D07BBA300B88C20 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98A0150F2C74650800B484D7 /* EssentialFeed.framework */; platformFilter = ios; };
 		98C67A9F2D07BBA300B88C20 /* EssentialFeed.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 98A0150F2C74650800B484D7 /* EssentialFeed.framework */; platformFilter = ios; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -140,6 +143,7 @@
 		981AE49E2C75BF21009DB408 /* FeedItemsMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemsMapper.swift; sourceTree = "<group>"; };
 		981AE4A12C7716B5009DB408 /* URLSessionHTTPClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientTests.swift; sourceTree = "<group>"; };
 		981AE4A42C78635C009DB408 /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
+		981AE4B02C7C7420009DB408 /* EssentialFeed.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeed.xctestplan; sourceTree = "<group>"; };
 		981AE4B12C7C7A39009DB408 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		981AE4BA2C7D7548009DB408 /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		981AE4BC2C7D7548009DB408 /* EssentialFeedAPIEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EssentialFeedAPIEndToEndTests.swift; sourceTree = "<group>"; };
@@ -164,8 +168,12 @@
 		98A0151C2C74650900B484D7 /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		98A015272C7465C700B484D7 /* FeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImage.swift; sourceTree = "<group>"; };
 		98A015292C74675600B484D7 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
+		98C67A4D2D041BC300B88C20 /* EssentialFeedAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeedAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
 		98C67A532D041EC600B88C20 /* EssentialFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98C67A5C2D041EC700B88C20 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		98C67A6B2D041F6B00B88C20 /* EssentialFeediOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeediOS.xctestplan; sourceTree = "<group>"; };
+		98C67A742D04231800B88C20 /* CI_iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI_iOS.xctestplan; sourceTree = "<group>"; };
+		98CA2C5E2C74738C00E44307 /* CI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = CI.xctestplan; sourceTree = "<group>"; };
 		98DB73332C86B98E0081D366 /* CoreDataFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStoreTests.swift; sourceTree = "<group>"; };
 		98DB73352C86BA8F0081D366 /* CoreDataFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStore.swift; sourceTree = "<group>"; };
 		98DB73382C86EBF50081D366 /* FeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore.xcdatamodel; sourceTree = "<group>"; };
@@ -335,6 +343,11 @@
 		98A015052C74650800B484D7 = {
 			isa = PBXGroup;
 			children = (
+				98C67A6B2D041F6B00B88C20 /* EssentialFeediOS.xctestplan */,
+				98C67A742D04231800B88C20 /* CI_iOS.xctestplan */,
+				98C67A4D2D041BC300B88C20 /* EssentialFeedAPIEndToEndTests.xctestplan */,
+				981AE4B02C7C7420009DB408 /* EssentialFeed.xctestplan */,
+				98CA2C5E2C74738C00E44307 /* CI.xctestplan */,
 				98A015112C74650800B484D7 /* EssentialFeed */,
 				98A0151B2C74650900B484D7 /* EssentialFeedTests */,
 				981AE4BB2C7D7548009DB408 /* EssentialFeedAPIEndToEndTests */,
@@ -644,6 +657,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C67A762D04231800B88C20 /* CI_iOS.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,6 +672,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C67A752D04231800B88C20 /* CI_iOS.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +680,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				98C67A772D04231800B88C20 /* CI_iOS.xctestplan in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
