@@ -8,11 +8,11 @@
 import UIKit
 import EssentialFeed
 
-final class FeedImageCellController {
+public final class FeedImageCellController {
     private let viewModel: FeedImageViewModel<UIImage>
     private var cell: FeedImageCell?
 
-    init(viewModel: FeedImageViewModel<UIImage>) {
+    public init(viewModel: FeedImageViewModel<UIImage>) {
         self.viewModel = viewModel
     }
 
