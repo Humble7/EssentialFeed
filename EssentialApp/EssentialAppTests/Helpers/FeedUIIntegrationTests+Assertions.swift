@@ -1,8 +1,8 @@
 //
 //  FeedUIIntegrationTests+Assertions.swift
-//  EssentialFeediOSTests
+//  EssentialAppTests
 //
-//  Created by ChenZhen on 11/12/24.
+//  Created by ChenZhen on 21/12/24.
 //
 
 import XCTest
@@ -10,6 +10,16 @@ import EssentialFeed
 import EssentialFeediOS
 
 extension FeedUIIntegrationTests {
+    func assertThat(_ sut: FeedViewController, isRendering feed: [FeedImage], file: StaticString = #file, line: UInt = #line) {
+        guard sut.numberOfRenderedFeedImageViews() == feed.count else {
+            return XCTFail("Expected \(feed.count) images, got \(sut.numberOfRenderedFeedImageViews()) instead.", file: file, line: line)
+        }
+
+        feed.enumerated().forEach { index, image in
+            assertThat(sut, hasViewConfiguredFor: image, at: index, file: file, line: line)
+        }
+    }
+    
     func assertThat(_ sut: FeedViewController, hasViewConfiguredFor image: FeedImage, at index: Int, file: StaticString = #file, line: UInt = #line) {
         let view = sut.feedImageView(at: index)
 
