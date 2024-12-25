@@ -22,7 +22,7 @@ public final class RemoteFeedLoader {
     public enum Error: Swift.Error {
         case connectivity
     }
-    public func load(completion: @escaping (Error) -> Void = { _ in }) {
+    public func load(completion: @escaping (Error) -> Void) {
         client.get(from: url) { error in
             completion(.connectivity)
         }
