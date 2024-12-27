@@ -44,7 +44,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
     
     func test_getFromURL_performGetRequestWithURL() {
 
-        let url = anotherURL()
+        let url = anyURL()
         
         let exp = expectation(description: "Wait for request")
         URLProtocolStub.observeRequests { request in
@@ -113,10 +113,6 @@ final class URLSessionHTTPClientTests: XCTestCase {
     
     private func anyURL() -> URL {
         return URL(string: "http://any-url.com")!
-    }
-    
-    private func anotherURL() -> URL {
-        return URL(string: "http://another-url.com")!
     }
     
     private func anyData() -> Data {
