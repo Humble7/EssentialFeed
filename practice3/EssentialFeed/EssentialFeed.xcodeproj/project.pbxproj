@@ -33,6 +33,8 @@
 		985BB60C2D1BCC9A00D0876A /* EssentialFeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		987B8A632D1F981D00B0EEF8 /* FeedAPI.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedAPI.xctestplan; sourceTree = "<group>"; };
 		987B8A682D1F9BE100B0EEF8 /* EssentialFeedAPIEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeedAPIEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		989953132D1FA81C00A2DA93 /* EssentialFeedAPIEndToEndTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = EssentialFeedAPIEndToEndTests.xctestplan; sourceTree = "<group>"; };
+		989953142D1FA93200A2DA93 /* CI-MacOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "CI-MacOS.xctestplan"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -96,6 +98,8 @@
 		985BB5FA2D1BCC9900D0876A = {
 			isa = PBXGroup;
 			children = (
+				989953142D1FA93200A2DA93 /* CI-MacOS.xctestplan */,
+				989953132D1FA81C00A2DA93 /* EssentialFeedAPIEndToEndTests.xctestplan */,
 				987B8A632D1F981D00B0EEF8 /* FeedAPI.xctestplan */,
 				985BB6062D1BCC9900D0876A /* EssentialFeed */,
 				985BB6102D1BCC9A00D0876A /* EssentialFeedTests */,
