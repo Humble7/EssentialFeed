@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -38,7 +38,7 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		987B8A732D1FA5D700B0EEF8 /* Exceptions for "EssentialFeedTests" folder in "EssentialFeedAPIEndToEndTests" target */ = {
+		987B8A732D1FA5D700B0EEF8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				"Feed API/Helpers/XCTestCase+MemoryLeakTracking.swift",
@@ -48,24 +48,9 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		985BB6062D1BCC9900D0876A /* EssentialFeed */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EssentialFeed;
-			sourceTree = "<group>";
-		};
-		985BB6102D1BCC9A00D0876A /* EssentialFeedTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				987B8A732D1FA5D700B0EEF8 /* Exceptions for "EssentialFeedTests" folder in "EssentialFeedAPIEndToEndTests" target */,
-			);
-			path = EssentialFeedTests;
-			sourceTree = "<group>";
-		};
-		987B8A692D1F9BE100B0EEF8 /* EssentialFeedAPIEndToEndTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = EssentialFeedAPIEndToEndTests;
-			sourceTree = "<group>";
-		};
+		985BB6062D1BCC9900D0876A /* EssentialFeed */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeed; sourceTree = "<group>"; };
+		985BB6102D1BCC9A00D0876A /* EssentialFeedTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (987B8A732D1FA5D700B0EEF8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedTests; sourceTree = "<group>"; };
+		987B8A692D1F9BE100B0EEF8 /* EssentialFeedAPIEndToEndTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedAPIEndToEndTests; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +209,7 @@
 				};
 			};
 			buildConfigurationList = 985BB5FE2D1BCC9900D0876A /* Build configuration list for PBXProject "EssentialFeed" */;
+			compatibilityVersion = "Xcode 15.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -232,7 +218,6 @@
 			);
 			mainGroup = 985BB5FA2D1BCC9900D0876A;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 985BB6052D1BCC9900D0876A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
