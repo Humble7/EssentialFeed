@@ -164,6 +164,7 @@ final class URLSessionHTTPClientTests: XCTestCase {
         
         override class func canonicalRequest(for request: URLRequest) -> URLRequest {
             requestObserver?(request)
+            requestObserver = nil
             return request
         }
         
