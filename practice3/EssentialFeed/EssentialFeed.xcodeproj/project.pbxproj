@@ -41,7 +41,7 @@
 		987B8A732D1FA5D700B0EEF8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
-				"Feed API/Helpers/XCTestCase+MemoryLeakTracking.swift",
+				"Helpers/XCTestCase+MemoryLeakTracking.swift",
 			);
 			target = 987B8A672D1F9BE100B0EEF8 /* EssentialFeedAPIEndToEndTests */;
 		};
