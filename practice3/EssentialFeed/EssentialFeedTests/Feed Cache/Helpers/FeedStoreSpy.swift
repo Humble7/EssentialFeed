@@ -9,10 +9,6 @@ import Foundation
 import EssentialFeed
 
 class FeedStoreSpy: FeedStore {
-    
-    typealias DeleteCompletion = (Error?) -> Void
-    typealias InsertionCompletion = (Error?) -> Void
-    typealias RetrievalCompletion = (Error?) -> Void
 
     enum ReceivedMessage: Equatable {
         case deleteCacheFeed
