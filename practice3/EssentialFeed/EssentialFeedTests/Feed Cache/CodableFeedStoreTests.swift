@@ -44,6 +44,19 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     func test_retrieve_deliversFailureOnRetrievalError() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
+        
+        let fileManager = FileManager.default
+
+        try? fileManager.createDirectory(
+            at: storeURL.deletingLastPathComponent(),
+            withIntermediateDirectories: true,
+            attributes: nil
+        )
+
+        if fileManager.fileExists(atPath: storeURL.path) {
+            try? fileManager.removeItem(at: storeURL)
+        }
+        
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
         assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
     }
@@ -51,6 +64,18 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     func test_retrieve_hasNoSideEffectsOnFailure() {
         let storeURL = testSpecificStoreURL()
         let sut = makeSUT(storeURL: storeURL)
+        let fileManager = FileManager.default
+
+        try? fileManager.createDirectory(
+            at: storeURL.deletingLastPathComponent(),
+            withIntermediateDirectories: true,
+            attributes: nil
+        )
+
+        if fileManager.fileExists(atPath: storeURL.path) {
+            try? fileManager.removeItem(at: storeURL)
+        }
+        
         try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
         assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
     }
@@ -103,7 +128,7 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStoreSpecs {
     }
     
     func test_delete_deliversErrorOnDeletionError() {
-        let noDeletePermissionURL = cachesDirectory()
+        let noDeletePermissionURL = cachesDirectory().deletingLastPathComponent()
         let sut = makeSUT(storeURL: noDeletePermissionURL)
 
         assertThatDeleteDeliversErrorOnDeletionError(on: sut)

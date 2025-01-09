@@ -51,6 +51,17 @@ public class CodableFeedStore: FeedStore {
                 let cache = Cache(feed: feed.map(CodableFeedImage.init), timestamp: timestamp)
                 let encoder = JSONEncoder()
                 let data = try encoder.encode(cache)
+                let fileManager = FileManager.default
+
+                try? fileManager.createDirectory(
+                    at: storeURL.deletingLastPathComponent(),
+                    withIntermediateDirectories: true,
+                    attributes: nil
+                )
+
+                if fileManager.fileExists(atPath: storeURL.path) {
+                    try? fileManager.removeItem(at: storeURL)
+                }
                 try data.write(to: storeURL)
                 completion(.success(()))
             } catch {
