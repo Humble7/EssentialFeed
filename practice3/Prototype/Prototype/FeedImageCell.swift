@@ -48,30 +48,47 @@ private extension UIView {
     }
     
     func startShimmering() {
-        let white = UIColor.white.cgColor
-        let alpha = UIColor.white.withAlphaComponent(0.7).cgColor
-
-        let width = bounds.width
-        let height = bounds.height
-        
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [alpha, white, alpha]
-        gradientLayer.startPoint = CGPoint(x: 0, y: 0.4)
-        gradientLayer.endPoint = CGPoint(x: 1, y: 0.6)
-        gradientLayer.locations = [0.4, 0.5, 0.6]
-        gradientLayer.frame = CGRect(x: -width, y: 0, width: width * 3, height: height)
-        layer.mask = gradientLayer
-        
-        let animation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.locations))
-        animation.fromValue = [0.0, 0.1, 0.2]
-        animation.toValue = [0.8, 0.9, 1.0]
-        animation.duration = 1.5
-        animation.repeatCount = .infinity
-        gradientLayer.add(animation, forKey: shimmerAnimationKey)
-        
+        layer.mask = ShimmeringLayer(size: bounds.size)
     }
     
     func stopShimmering() {
         layer.mask = nil
+    }
+}
+
+private class ShimmeringLayer: CAGradientLayer {
+    private var observer: Any?
+    
+    convenience init(size: CGSize) {
+        self.init()
+        
+        let white = UIColor.white.cgColor
+        let alpha = UIColor.white.withAlphaComponent(0.75).cgColor
+        
+        colors = [alpha, white, alpha]
+        startPoint = CGPoint(x: 0, y: 0.4)
+        endPoint = CGPoint(x: 1, y: 0.6)
+        locations = [0.4, 0.5, 0.6]
+        frame = CGRect(x: -size.width, y: 0, width: size.width * 3, height: size.height)
+        
+        let animation = CABasicAnimation(keyPath: #keyPath(CAGradientLayer.locations))
+        animation.fromValue = [0.0, 0.1, 0.2]
+        animation.toValue = [0.8, 0.9, 1.0]
+        animation.duration = 1.25
+        animation.repeatCount = .infinity
+        add(animation, forKey: "shimmer")
+        
+        observer = NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: nil) { [weak self] _ in
+            self?.add(animation, forKey: "shimmer")
+            print("ni")
+        }
+        
+    }
+    
+    deinit {
+        removeAnimation(forKey: "shimmer")
+        if observer != nil {
+            NotificationCenter.default.removeObserver(observer!)
+        }
     }
 }
