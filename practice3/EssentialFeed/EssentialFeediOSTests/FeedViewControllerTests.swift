@@ -66,11 +66,7 @@ final class FeedViewControllerTests: XCTestCase {
         sut.beginAppearanceTransition(true, animated: false)
         sut.endAppearanceTransition()
         
-        sut.refreshControl?.allTargets.forEach { target in
-            sut.refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach({ action in
-                (target as NSObject).perform(Selector(action))
-            })
-        }
+        sut.refreshControl?.simulatePullToRefresh()
         
         XCTAssertEqual(loaderSpy.loadCallCount, 2)
     }
@@ -91,6 +87,16 @@ final class FeedViewControllerTests: XCTestCase {
 
         func load(completion: @escaping (FeedLoader.Result) -> Void) {
             loadCallCount += 1
+        }
+    }
+}
+
+private extension UIRefreshControl {
+    func simulatePullToRefresh() {
+        allTargets.forEach { target in
+            actions(forTarget: target, forControlEvent: .valueChanged)?.forEach({ action in
+                (target as NSObject).perform(Selector(action))
+            })
         }
     }
 }
