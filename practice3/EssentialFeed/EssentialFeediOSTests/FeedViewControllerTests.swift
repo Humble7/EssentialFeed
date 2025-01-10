@@ -18,7 +18,6 @@ final class FeedViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loader?.load() { _ in }
     }
     
 }
@@ -32,12 +31,12 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(loaderSpy.loadCallCount, 0)
     }
     
-    func test_viewDidLoad_loadsFeed() {
+    func test_viewDidLoad_doesNotLoadsFeed() {
         let loaderSpy = LoaderSpy()
         let sut = FeedViewController(loader: loaderSpy)
         sut.loadViewIfNeeded()
         
-        XCTAssertEqual(loaderSpy.loadCallCount, 1)
+        XCTAssertEqual(loaderSpy.loadCallCount, 0)
     }
     // MARKS: - Helpers
     
