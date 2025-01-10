@@ -31,23 +31,21 @@ final class FeedViewController: UITableViewController {
 final class FeedViewControllerTests: XCTestCase {
     
     func test_init_doesNotLoadFeed() {
-        let loaderSpy = LoaderSpy()
-        _ = FeedViewController(loader: loaderSpy)
+        let (_, loaderSpy) = makeSUT()
         
         XCTAssertEqual(loaderSpy.loadCallCount, 0)
     }
     
     func test_viewDidLoad_doesNotLoadsFeed() {
-        let loaderSpy = LoaderSpy()
-        let sut = FeedViewController(loader: loaderSpy)
+        let (sut, loaderSpy) = makeSUT()
+
         sut.loadViewIfNeeded()
         
         XCTAssertEqual(loaderSpy.loadCallCount, 0)
     }
     
     func test_viewIsAppearing_loadsFeed() {
-        let loaderSpy = LoaderSpy()
-        let sut = FeedViewController(loader: loaderSpy)
+        let (sut, loaderSpy) = makeSUT()
         sut.loadViewIfNeeded()
         sut.beginAppearanceTransition(true, animated: false)
         sut.endAppearanceTransition()
@@ -56,6 +54,14 @@ final class FeedViewControllerTests: XCTestCase {
     }
     
     // MARKS: - Helpers
+    
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
+        let loaderSpy = LoaderSpy()
+        let sut = FeedViewController(loader: loaderSpy)
+        trackForMemoryLeaks(loaderSpy, file: file, line: line)
+        trackForMemoryLeaks(sut, file: file, line: line)
+        return (sut, loaderSpy)
+    }
     
     class LoaderSpy: FeedLoader {
 

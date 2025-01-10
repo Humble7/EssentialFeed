@@ -73,6 +73,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		986D09F92D309D1100FFA18F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				"Helpers/XCTestCase+MemoryLeakTracking.swift",
+			);
+			target = 986D09102D2F911F00FFA18F /* EssentialFeediOSTests */;
+		};
 		987B8A732D1FA5D700B0EEF8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -85,7 +92,7 @@
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		985BB6062D1BCC9900D0876A /* EssentialFeed */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeed; sourceTree = "<group>"; };
-		985BB6102D1BCC9A00D0876A /* EssentialFeedTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (987B8A732D1FA5D700B0EEF8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedTests; sourceTree = "<group>"; };
+		985BB6102D1BCC9A00D0876A /* EssentialFeedTests */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (987B8A732D1FA5D700B0EEF8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, 986D09F92D309D1100FFA18F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedTests; sourceTree = "<group>"; };
 		986D090B2D2F911E00FFA18F /* EssentialFeediOS */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOS; sourceTree = "<group>"; };
 		986D09152D2F911F00FFA18F /* EssentialFeediOSTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeediOSTests; sourceTree = "<group>"; };
 		987B8A692D1F9BE100B0EEF8 /* EssentialFeedAPIEndToEndTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = EssentialFeedAPIEndToEndTests; sourceTree = "<group>"; };
