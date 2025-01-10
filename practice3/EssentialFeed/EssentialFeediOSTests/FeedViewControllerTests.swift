@@ -20,6 +20,12 @@ final class FeedViewController: UITableViewController {
         super.viewDidLoad()
     }
     
+    override func viewIsAppearing(_ animated: Bool) {
+        super.viewIsAppearing(animated)
+        
+        self.loader?.load() { _ in }
+    }
+    
 }
 
 final class FeedViewControllerTests: XCTestCase {
@@ -38,6 +44,17 @@ final class FeedViewControllerTests: XCTestCase {
         
         XCTAssertEqual(loaderSpy.loadCallCount, 0)
     }
+    
+    func test_viewIsAppearing_loadsFeed() {
+        let loaderSpy = LoaderSpy()
+        let sut = FeedViewController(loader: loaderSpy)
+        sut.loadViewIfNeeded()
+        sut.beginAppearanceTransition(true, animated: false)
+        sut.endAppearanceTransition()
+        
+        XCTAssertEqual(loaderSpy.loadCallCount, 1)
+    }
+    
     // MARKS: - Helpers
     
     class LoaderSpy: FeedLoader {
