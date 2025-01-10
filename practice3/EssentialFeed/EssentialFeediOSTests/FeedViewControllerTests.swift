@@ -18,12 +18,19 @@ final class FeedViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(load), for: .valueChanged)
     }
     
     override func viewIsAppearing(_ animated: Bool) {
         super.viewIsAppearing(animated)
         
         self.loader?.load() { _ in }
+    }
+    
+    @objc private func load() {
+        loader?.load { _ in }
     }
     
 }
@@ -51,6 +58,21 @@ final class FeedViewControllerTests: XCTestCase {
         sut.endAppearanceTransition()
         
         XCTAssertEqual(loaderSpy.loadCallCount, 1)
+    }
+    
+    func test_pullToRefresh_loadsFeed() {
+        let (sut, loaderSpy) = makeSUT()
+        sut.loadViewIfNeeded()
+        sut.beginAppearanceTransition(true, animated: false)
+        sut.endAppearanceTransition()
+        
+        sut.refreshControl?.allTargets.forEach { target in
+            sut.refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach({ action in
+                (target as NSObject).perform(Selector(action))
+            })
+        }
+        
+        XCTAssertEqual(loaderSpy.loadCallCount, 2)
     }
     
     // MARKS: - Helpers
