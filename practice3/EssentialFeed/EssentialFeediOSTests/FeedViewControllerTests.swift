@@ -54,18 +54,14 @@ final class FeedViewControllerTests: XCTestCase {
     
     func test_viewIsAppearing_loadsFeed() {
         let (sut, loaderSpy) = makeSUT()
-        sut.loadViewIfNeeded()
-        sut.beginAppearanceTransition(true, animated: false)
-        sut.endAppearanceTransition()
+        sut.simulateAppearance()
         
         XCTAssertEqual(loaderSpy.loadCallCount, 1)
     }
     
     func test_pullToRefresh_loadsFeed() {
         let (sut, loaderSpy) = makeSUT()
-        sut.loadViewIfNeeded()
-        sut.beginAppearanceTransition(true, animated: false)
-        sut.endAppearanceTransition()
+        sut.simulateAppearance()
         
         sut.refreshControl?.simulatePullToRefresh()
         
@@ -74,17 +70,7 @@ final class FeedViewControllerTests: XCTestCase {
     
     func test_viewIsAppearing_showsLoadingIndicator() {
         let (sut, _) = makeSUT()
-        sut.loadViewIfNeeded()
-        let fakeRefreshControl = FakeRefreshControl()
-        sut.refreshControl?.allTargets.forEach { target in
-            sut.refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
-                fakeRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
-            }
-        }
-        sut.refreshControl = fakeRefreshControl
-        
-        sut.beginAppearanceTransition(true, animated: false)
-        sut.endAppearanceTransition()
+        sut.simulateAppearance()
         
         XCTAssertTrue(sut.refreshControl!.isRefreshing)
     }
@@ -106,6 +92,26 @@ final class FeedViewControllerTests: XCTestCase {
         func load(completion: @escaping (FeedLoader.Result) -> Void) {
             loadCallCount += 1
         }
+    }
+}
+
+private extension FeedViewController {
+    func simulateAppearance() {
+        if !isViewLoaded {
+            loadViewIfNeeded()
+            
+            let fakeRefreshControl = FakeRefreshControl()
+            refreshControl?.allTargets.forEach { target in
+                refreshControl?.actions(forTarget: target, forControlEvent: .valueChanged)?.forEach { action in
+                    fakeRefreshControl.addTarget(target, action: Selector(action), for: .valueChanged)
+                }
+            }
+            
+            refreshControl = fakeRefreshControl
+        }
+        
+        beginAppearanceTransition(true, animated: false)
+        endAppearanceTransition()
     }
 }
 
