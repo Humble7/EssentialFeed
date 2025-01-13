@@ -426,13 +426,3 @@ private extension FeedImageCell {
         return descriptionLabel.text
     }
 }
-
-private extension UIButton {
-    func simulateTap() {
-        allTargets.forEach { target in
-            actions(forTarget: target, forControlEvent: .touchUpInside)?.forEach({ action in
-                (target as NSObject).perform(Selector(action))
-            })
-        }
-    }
-}
