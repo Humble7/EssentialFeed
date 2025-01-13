@@ -172,6 +172,25 @@ final class FeedViewControllerTests: XCTestCase {
     }
     
     func test_feedImageViewRetryButton_isVisibleOnInvalidImageData() {
+        let image0 = makeImage()
+        let image1 = makeImage()
+        let (sut, loader) = makeSUT()
+        
+        sut.simulateAppearance()
+        loader.completeFeedLoading(with: [image0, image1])
+        
+        let view0 = sut.simulateFeedImageViewVisible(at: 0)
+        let view1 = sut.simulateFeedImageViewVisible(at: 1)
+        XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url], "Expected only two image URL requests before retry action")
+        
+        view0?.simulateRetryAction()
+        XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url, image0.url], "Expected third imageURL request after first view retry action")
+
+        view1?.simulateRetryAction()
+        XCTAssertEqual(loader.loadedImageURLs, [image0.url, image1.url, image0.url, image1.url], "Expected third imageURL request after first view retry action")
+    }
+    
+    func test_feedImageViewRetryButton_retriesImageLoad() {
         let (sut, loader) = makeSUT()
         sut.simulateAppearance()
         loader.completeFeedLoading(with: [makeImage()])
@@ -333,6 +352,10 @@ private extension FeedViewController {
 
 private extension FeedImageCell {
     
+    func simulateRetryAction() {
+        feedImageRetryButton.simulateTap()
+    }
+    
     var isShowingRetryAction: Bool {
         !feedImageRetryButton.isHidden
     }
@@ -378,6 +401,16 @@ private extension UIRefreshControl {
     func simulatePullToRefresh() {
         allTargets.forEach { target in
             actions(forTarget: target, forControlEvent: .valueChanged)?.forEach({ action in
+                (target as NSObject).perform(Selector(action))
+            })
+        }
+    }
+}
+
+private extension UIButton {
+    func simulateTap() {
+        allTargets.forEach { target in
+            actions(forTarget: target, forControlEvent: .touchUpInside)?.forEach({ action in
                 (target as NSObject).perform(Selector(action))
             })
         }
