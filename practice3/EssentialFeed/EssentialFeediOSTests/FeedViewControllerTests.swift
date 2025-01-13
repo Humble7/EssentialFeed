@@ -151,6 +151,26 @@ final class FeedViewControllerTests: XCTestCase {
         XCTAssertEqual(view1?.renderedImage, imageData1, "Expected image for second view once second image loading completes successfully")
     }
     
+    func test_feedImageViewRetryButton_isVisibleOnImageURLLoadError() {
+        let (sut, loader) = makeSUT()
+        sut.simulateAppearance()
+        loader.completeFeedLoading(with: [makeImage(), makeImage()])
+        
+        let view0 = sut.simulateFeedImageViewVisible(at: 0)
+        let view1 = sut.simulateFeedImageViewVisible(at: 1)
+        XCTAssertEqual(view0?.isShowingRetryAction, false, "Expected no image for first view while loading first image")
+        XCTAssertEqual(view1?.isShowingRetryAction, false, "Expected no image for second view while loading second image")
+        
+        let imageData0 = UIImage.make(withColor: .red).pngData()!
+        loader.completeImageLoading(with: imageData0, at: 0)
+        XCTAssertEqual(view0?.isShowingRetryAction, false, "Expected image for first view once first image loading compteletes successfully")
+        XCTAssertEqual(view1?.isShowingRetryAction, false, "Expected no image state for second view while first image loading compteletes successfully")
+        
+        loader.completeImageLoadingWithError(at: 1)
+        XCTAssertEqual(view0?.isShowingRetryAction, false, "Expected no image state change for first view once second image loading completes successfully")
+        XCTAssertEqual(view1?.isShowingRetryAction, true, "Expected image for second view once second image loading completes successfully")
+    }
+    
     // MARKS: - Helpers
     
     private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedViewController, loader: LoaderSpy) {
@@ -299,6 +319,10 @@ private extension FeedViewController {
 }
 
 private extension FeedImageCell {
+    
+    var isShowingRetryAction: Bool {
+        !feedImageRetryButton.isHidden
+    }
     
     var renderedImage: Data? {
         return feedImageView.image?.pngData()
