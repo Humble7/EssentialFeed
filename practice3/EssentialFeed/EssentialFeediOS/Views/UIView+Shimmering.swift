@@ -60,4 +60,3 @@ private class ShimmeringLayer: CAGradientLayer {
         }
     }
 }
-
