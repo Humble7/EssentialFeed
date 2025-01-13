@@ -427,32 +427,6 @@ private extension FeedImageCell {
     }
 }
 
-private class FakeRefreshControl: UIRefreshControl {
-    private var _isRefreshing: Bool = false
-    
-    override var isRefreshing: Bool {
-        _isRefreshing
-    }
-    
-    override func beginRefreshing() {
-        _isRefreshing = true
-    }
-    
-    override func endRefreshing() {
-        _isRefreshing = false
-    }
-}
-
-private extension UIRefreshControl {
-    func simulatePullToRefresh() {
-        allTargets.forEach { target in
-            actions(forTarget: target, forControlEvent: .valueChanged)?.forEach({ action in
-                (target as NSObject).perform(Selector(action))
-            })
-        }
-    }
-}
-
 private extension UIButton {
     func simulateTap() {
         allTargets.forEach { target in
