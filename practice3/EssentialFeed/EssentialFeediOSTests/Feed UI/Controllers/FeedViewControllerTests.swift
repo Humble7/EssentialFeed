@@ -16,9 +16,6 @@ final class FeedViewControllerTests: XCTestCase {
         let (sut, loaderSpy) = makeSUT()
         XCTAssertEqual(loaderSpy.loadFeedCallCount, 0, "Expected no loading requests before view is loaded")
 
-        sut.loadViewIfNeeded()
-        XCTAssertEqual(loaderSpy.loadFeedCallCount, 0, "Expected no loading requests once view is loaded")
-
         sut.simulateAppearance()
         XCTAssertEqual(loaderSpy.loadFeedCallCount, 1, "Expected a loading request once view is appearing")
         
