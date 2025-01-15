@@ -14,14 +14,14 @@ final class FeedRefreshViewController: NSObject {
     init(viewModel: FeedViewModel) {
         self.viewModel = viewModel
     }
-        
+    
     @objc func refresh() {
         viewModel.loadFeed()
     }
     
     private func binded(view: UIRefreshControl) -> UIRefreshControl {
-        viewModel.onChange = { [weak self] viewModel in
-            if viewModel.isLoading {
+        viewModel.onLoadingStateChange = { [weak self] isLoading in
+            if isLoading {
                 self?.view.beginRefreshing()
             } else {
                 self?.view.endRefreshing()
