@@ -63,7 +63,6 @@ extension WeakRefVirtualProxy: FeedImageView where T: FeedImageView, T.Image == 
 }
 
 private final class FeedLoaderPresentationAdapter: FeedRefreshViewControllerDelete {
-    typealias Observer<T> = (T) -> Void
     
     private let feedLoader: FeedLoader
     var presenter: FeedPresenter?
