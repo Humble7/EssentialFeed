@@ -8,48 +8,39 @@
 import UIKit
 import EssentialFeed
 
-final class FeedImageCellController {
-    private let viewModel: FeedImageViewModel<UIImage>
+protocol FeedImageCellControllerDelete {
+    func didRequestImage()
+    func didCancelImageRequest()
+}
+
+final class FeedImageCellController: FeedImageView {
+    private lazy var cell = FeedImageCell()
     
-    init(viewModel: FeedImageViewModel<UIImage>) {
-        self.viewModel = viewModel
-    }
-    
-    func view() -> UITableViewCell {
-        let cell = binded(FeedImageCell())
-        viewModel.loadImageData()
-        return cell
-    }
-    
-    func binded(_ cell: FeedImageCell) -> FeedImageCell {
-        cell.feedImageView.image = nil
-        cell.feedImageRetryButton.isHidden = true
+    func display(_ viewModel: FeedImageViewModel<UIImage>) {
+        cell.feedImageView.image = viewModel.image
+        cell.feedImageRetryButton.isHidden = !viewModel.shouldRetry
         cell.locationContainer.isHidden = !viewModel.hasLocation
         cell.locationLabel.text = viewModel.location
         cell.descriptionLabel.text = viewModel.description
-
-        viewModel.onImageLoad = { [weak cell] image in
-            cell?.feedImageView.image = image
-        }
-        
-        viewModel.onImageLoadingStateChange = { [weak cell] isLoading in
-            cell?.feedImageContainer.isShimmering = isLoading
-        }
-        
-        viewModel.onShouldRetryImageLoadStateChange = { [weak cell] shouldRetry in
-            cell?.feedImageRetryButton.isHidden = !shouldRetry
-        }
-        
-        cell.onRetry = viewModel.loadImageData
-        
+        cell.feedImageContainer.isShimmering = viewModel.isLoading
+        cell.onRetry = delegate.didRequestImage
+    }
+    
+    private let delegate: FeedImageCellControllerDelete
+    init(delegate: FeedImageCellControllerDelete) {
+        self.delegate = delegate
+    }
+    
+    func view() -> UITableViewCell {
+        delegate.didRequestImage()
         return cell
     }
     
     func preload() {
-        viewModel.preload()
+        delegate.didRequestImage()
     }
     
     func cancelLoad() {
-        viewModel.cancelLoad()
+        delegate.didCancelImageRequest()
     }
 }
