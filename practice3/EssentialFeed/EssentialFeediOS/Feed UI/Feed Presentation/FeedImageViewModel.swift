@@ -1,5 +1,5 @@
 //
-//  FeedLoadingViewModel.swift
+//  FeedImageViewModel.swift
 //  EssentialFeediOS
 //
 //  Created by ChenZhen on 18/1/25.
