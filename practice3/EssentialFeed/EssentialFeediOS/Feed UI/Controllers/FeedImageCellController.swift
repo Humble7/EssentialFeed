@@ -17,7 +17,7 @@ final class FeedImageCellController: FeedImageView {
     private var cell: FeedImageCell?
     
     func display(_ viewModel: FeedImageViewModel<UIImage>) {
-        cell?.feedImageView.image = viewModel.image
+        cell?.feedImageView.setImageAnimated(viewModel.image)
         cell?.feedImageRetryButton.isHidden = !viewModel.shouldRetry
         cell?.locationContainer.isHidden = !viewModel.hasLocation
         cell?.locationLabel.text = viewModel.location
@@ -50,3 +50,5 @@ final class FeedImageCellController: FeedImageView {
         cell = nil
     }
 }
+
+
