@@ -54,15 +54,15 @@ class FeedPresenterTests: XCTestCase {
     }
     
     private class ViewSpy: FeedLoadingView {
-        func display(_ viewModel: FeedLoadingViewModel) {
-            messages.append(.dispaly(viewModel.isLoading))
-        }
-        
-        
-        enum Message: Equatable {
+        enum Message: Hashable {
             case dispaly(_ isLoading: Bool)
         }
         
-        var messages = [Message]()
+        private(set) var messages = Set<Message>()
+        
+        func display(_ viewModel: FeedLoadingViewModel) {
+            messages.insert(.dispaly(viewModel.isLoading))
+        }
+        
     }
 }
