@@ -8,49 +8,6 @@
 import XCTest
 import EssentialFeed
 
-struct FeedLoadingViewModel {
-    let isLoading: Bool
-}
-
-struct FeedViewModel {
-    let feed: [FeedImage]
-}
-
-protocol FeedLoadingView {
-    func display(_ viewModel: FeedLoadingViewModel)
-}
-
-protocol FeedView {
-    func display(_ viewModel: FeedViewModel)
-}
-
-final class FeedPresenter {
-    private let feedView: FeedView
-    private let feedLoadingView: FeedLoadingView
-
-    init(feedView: FeedView, feedLoadingView: FeedLoadingView) {
-        self.feedView = feedView
-        self.feedLoadingView = feedLoadingView
-    }
-    
-    static var title: String {
-        return NSLocalizedString("FEED_VIEW_TITLE", tableName: "Feed", bundle: Bundle(for: FeedPresenter.self), comment: "Title for the feed view")
-    }
-    
-    func didStartLoadingFeed() {
-        feedLoadingView.display(FeedLoadingViewModel(isLoading: true))
-    }
-    
-    func didFinishLoadingFeed(with feed: [FeedImage]) {
-        feedView.display(FeedViewModel(feed: feed))
-        feedLoadingView.display(FeedLoadingViewModel(isLoading: false))
-    }
-    
-    func didFinishLoadingFeed(with error: Error) {
-        feedLoadingView.display(FeedLoadingViewModel(isLoading: false))
-    }
-}
-
 class FeedPresenterTests: XCTestCase {
     
     func test_title_isLocalized() {
