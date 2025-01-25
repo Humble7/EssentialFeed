@@ -1,6 +1,6 @@
 //
 //  FeedImageDataLoader.swift
-//  EssentialFeediOS
+//  EssentialFeed
 //
 //  Created by ChenZhen on 14/1/25.
 //
